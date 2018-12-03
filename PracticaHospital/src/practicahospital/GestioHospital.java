@@ -12,3 +12,5 @@ package practicahospital;
 public class GestioHospital {
     //gitbucket tu puta madre
 }
+
+// illo el carameloraro ese ajjajaj
