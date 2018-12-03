@@ -10,5 +10,5 @@ package practicahospital;
  * @author LoWs-top
  */
 public class GestioHospital {
-    
+    //gitbucket tu puta madre
 }
