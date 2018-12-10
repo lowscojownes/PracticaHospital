@@ -16,20 +16,22 @@ public abstract class Persona {
     private Adreca direccio;
     
     public Persona(String nom,String cognom1,String cognom2,String numSegSocial,
-            String nif, String telefon) throws Exception{
+            String nif, String telefon, String ciutat,String codiPostal,String carrer,
+            int numero,String planta,String porta) throws Exception{
         this.nom = nom;
         this.cognom1 = cognom1;
         this.cognom2 = cognom2;
         this.numSegSocial = numSegSocial;
         this.nif = nif;
         this.telefon = telefon;
+        Adreca adreca = new Adreca(ciutat,codiPostal, carrer,numero,planta,porta);
         boolean alfabet_nom = comprobacioAlfabet(nom);
         boolean alfabet_cognom1 = comprobacioAlfabet(cognom1);
         boolean alfabet_cognom2 = comprobacioAlfabet(cognom2);
         boolean s_social = comprobacioSeguretatSocial(numSegSocial);
         boolean dni = verificarNif(Integer.parseInt(nif));
         boolean tlfn = verificarTelefon(telefon);
-        try{
+       
             
 
             if (alfabet_nom == false){
@@ -50,9 +52,7 @@ public abstract class Persona {
             if (tlfn == false){
                 falles += "Num Telefon incorrecte ";
         }
-        }catch(Exception e){
-            System.out.println(falles);
-        }
+     
         if(falles.length()>1){
             throw new Exception(falles); 
         }
