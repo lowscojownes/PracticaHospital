@@ -6,13 +6,13 @@ import java.time.LocalTime;
 public class Visita {
     String metge;
     Malaltia diagnostic;
-    LocalDate data;
-    LocalTime hora;
+    LocalDate data ;
+    LocalTime hora ;
     
-    public Visita(String metge, LocalDate data, LocalTime hora,Malaltia malaltia){
+    public Visita(String metge,Malaltia malaltia){
         this.metge = metge;
-        this.data = data;
-        this.hora = hora;
+        data = LocalDate.now();
+        hora = LocalTime.now();
         diagnostic = malaltia;
     }
 }
