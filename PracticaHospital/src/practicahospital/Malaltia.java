@@ -2,7 +2,7 @@ package practicahospital;
 
 public class Malaltia {
     static int idMalaltia = 1;
-    int codi;
+    static int codi;
     String nom;
     boolean baixa;
     String tractament;

@@ -9,7 +9,10 @@ public class Visita {
     LocalDate data;
     LocalTime hora;
     
-    public Visita(String nom,boolean baixa,String tractament,int duradaDies){
-        diagnostic = new Malaltia(nom,baixa,tractament,duradaDies);
+    public Visita(String metge, LocalDate data, LocalTime hora,Malaltia malaltia){
+        this.metge = metge;
+        this.data = data;
+        this.hora = hora;
+        diagnostic = malaltia;
     }
 }
