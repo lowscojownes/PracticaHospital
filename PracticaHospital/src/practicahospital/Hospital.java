@@ -1,14 +1,13 @@
 package practicahospital;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Hospital {
     String nom;
     Adreca adreca;
-    ArrayList<Historial> historials;
-    ArrayList<Malaltia> malaties;
+    private static Set<Historial>  historials;
+    private static Set<Malaltia>  malaties;
     private static Set<Pacient> pacients;
     private static Set<Metge> metges;
     
@@ -17,9 +16,9 @@ public class Hospital {
             int numero,String planta,String porta){
         this.nom = nom;
         adreca = new Adreca(ciutat,codiPostal,carrer,numero,planta,porta);
-        historials = new ArrayList<Historial>();
+        historials = new HashSet<Historial>();
         pacients = new HashSet<Pacient>();
-        malaties = new ArrayList<Malaltia>();
+        malaties = new HashSet<Malaltia>();
         metges = new HashSet<Metge>();
         
     }
