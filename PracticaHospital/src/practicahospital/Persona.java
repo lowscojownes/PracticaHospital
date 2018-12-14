@@ -24,7 +24,7 @@ public abstract class Persona {
         this.numSegSocial = numSegSocial;
         this.nif = nif;
         this.telefon = telefon;
-        Adreca adreca = new Adreca(ciutat,codiPostal, carrer,numero,planta,porta);
+        direccio = new Adreca(ciutat,codiPostal, carrer,numero,planta,porta);
         boolean alfabet_nom = comprobacioAlfabet(nom);
         boolean alfabet_cognom1 = comprobacioAlfabet(cognom1);
         boolean alfabet_cognom2 = comprobacioAlfabet(cognom2);
@@ -62,21 +62,13 @@ public abstract class Persona {
     public boolean comprobacioAlfabet(String frase) {
         Pattern regles = Pattern.compile("[a-zñl·l'çáéíóúàèòA-ZÑÇÁÉÍÓÚÀÈÒ]*");
         Matcher textAnalitzar = regles.matcher(frase);
-        if (textAnalitzar.matches()==true){
-            System.out.println("Frase "+frase +" correcta");
-            return true;
-        }
-        return false;
+        return textAnalitzar.matches()==true;
     }
     
     public boolean comprobacioSeguretatSocial(String frase) throws Exception{
         Pattern regles = Pattern.compile("([0-4][1-9]|10|20|30|40|50|53|66)[\\s][0-9]{8}[\\s][0-9]{2}");
         Matcher textAnalitzar = regles.matcher(frase);
-        if (textAnalitzar.matches()==true){
-            System.out.println("Num. Seguretat Social "+frase +" correcta");
-            return true;
-        }
-        return false;
+        return textAnalitzar.matches()==true;
     }
     
     public static String lletraDNI(int dni){
@@ -87,22 +79,13 @@ public abstract class Persona {
         boolean correcto = false;
         Pattern regles = Pattern.compile("[0-9]{8}[A-Z]");
         Matcher textAnalitzar = regles.matcher(lletraDNI(nif));
-        if (textAnalitzar.matches() == true){
-            System.out.print("Num NIF correcto ");
-            System.out.println(lletraDNI(nif));
-            return true;
-        }
-        return false;
+        return textAnalitzar.matches() == true;
     }
     
     public boolean verificarTelefon(String telefon) throws Exception{
         Pattern regles = Pattern.compile("\\+34[\\s][9][0-9]{8}");
         Matcher textAnalitzar = regles.matcher(telefon);
-        if (textAnalitzar.matches() == true){
-            System.out.println("Num Telefon "+telefon +" correcto");
-            return true;
-        }
-        return false;
+        return textAnalitzar.matches() == true;
     }
     
 }
