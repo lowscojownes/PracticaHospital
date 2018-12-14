@@ -6,10 +6,10 @@ import java.util.Set;
 public class Hospital {
     String nom;
     Adreca adreca;
-    private static Set<Historial>  historials;
-    private static Set<Malaltia>  malaties;
-    private static Set<Pacient> pacients;
-    private static Set<Metge> metges;
+    Set<Historial>  historials;
+    Set<Malaltia>  malalties;
+    Set<Pacient> pacients;
+    Set<Metge> metges;
     
 
     public Hospital(String nom,String ciutat,String codiPostal,String carrer,
@@ -18,7 +18,7 @@ public class Hospital {
         adreca = new Adreca(ciutat,codiPostal,carrer,numero,planta,porta);
         historials = new HashSet<Historial>();
         pacients = new HashSet<Pacient>();
-        malaties = new HashSet<Malaltia>();
+        malalties = new HashSet<Malaltia>();
         metges = new HashSet<Metge>();
         
     }

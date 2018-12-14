@@ -8,7 +8,7 @@ public class Pacient extends Persona{
             int numero,String planta,String porta) throws Exception {
         super(nom, cognom1, cognom2, numSegSocial, nif, telefon,ciutat,codiPostal,
                 carrer,numero,planta,porta);
-        Historial historial = new Historial(nif);
+        historial = new Historial(nif);
     }
     
     public String toString(){

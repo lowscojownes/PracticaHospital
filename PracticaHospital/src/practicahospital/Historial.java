@@ -8,7 +8,7 @@ public class Historial {
     static int idHistorial = 1;
     int codi;
     String pacient;
-    private static Set<Visita> visites;
+     Set<Visita> visites;
     
     public Historial(String nif){
         codi = idHistorial;
