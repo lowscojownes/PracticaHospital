@@ -3,7 +3,6 @@ package practicahospital;
 import java.util.Iterator;
 import java.util.Scanner;
 
-
 public class GestioHospital {
     public static void main(String[] args) throws Exception {
         Hospital hospital = new Hospital("Hospital Terrassa","Terrassa","08227","asd",
@@ -18,20 +17,44 @@ public class GestioHospital {
         Malaltia Apendicitis = new Malaltia("Apendicitis", true, "Operación apendicitis", 20);
         hospital.pacients.add(SergioB);
         hospital.pacients.add(SergioV);
+        hospital.historials.add(SergioB.historial);
+        hospital.historials.add(SergioV.historial);
         hospital.metges.add(ManuY);
         hospital.malalties.add(Gripe);
         hospital.malalties.add(Apendicitis);
-        registrarVisita(hospital);
-        registrarVisita(hospital);
-        //nouPacient(hospital);
-        //mostrarPacient(hospital);
-        //mostrarMetge(hospital);
-        veureHistorial(hospital);
-        veureHistorial(hospital);
-
+        Scanner sc = new Scanner (System.in);
+        String eleccio;
+        System.out.println("1. Registrar visita.");
+        System.out.println("2. Crear nou pacient.");
+        System.out.println("3. Mostrar pacient.");
+        System.out.println("4. Mostrar metge.");
+        System.out.println("5. Veure historial.");
+        System.out.println("6. Sortir");
+        System.out.println("Tria una opció (1-6): ");
+        eleccio = sc.nextLine();
+        switch(eleccio){
+            case "1":
+                registrarVisita(hospital);
+                break;
+            case "2":
+                nouPacient(hospital);
+                break;
+            case "3":
+                mostrarPacient(hospital);
+                break;
+            case "4":
+                mostrarMetge(hospital);
+                break;
+            case "5":
+                veureHistorial(hospital);
+                break;
+            case "6":
+                System.out.println("Sortir...");
+                break;
+        }
+        
     }
     
-    //no muestra historial todavia
     static void veureHistorial(Hospital hospital){
         Scanner sc = new Scanner(System.in);
         int codi;
@@ -41,27 +64,55 @@ public class GestioHospital {
         for (Iterator<Historial> il = hospital.historials.iterator(); il.hasNext();) {
             historial = il.next();
             if(historial.codi == codi){
+                System.out.println("Historial: ");
+                System.out.println("codi: "+historial.codi);
+                System.out.println("pacient: "+historial.pacient);
+                Visita visita;
                 for (Iterator<Visita> vis = historial.visites.iterator(); vis.hasNext();){
-                    System.out.println(vis.next().data);  
-                    System.out.println(vis.next().hora); 
-                    System.out.println(vis.next().metge); 
-                    System.out.println(vis.next().diagnostic); 
+                    visita = vis.next();
+                    System.out.println("Data: "+visita.data);
+                    System.out.println("Hora: "+visita.hora);
+                    System.out.println("Metge: "+visita.metge);
+                    System.out.println("Diagnostic: ");
+                    System.out.println("Codi:"+visita.diagnostic.codi);
+                    System.out.println("Nom: "+visita.diagnostic.nom);
+                    System.out.println("Tractament: "+visita.diagnostic.tractament);
+                    System.out.println("Durada dies: "+visita.diagnostic.duradaDies);
                 }
+                break;
             }
         }
     }
     
     static void mostrarPacient(Hospital hospital){
-        System.out.println("Pacients: ");
+        Scanner sc = new Scanner(System.in);
+        int historial;
+        System.out.println("Introdueix el numero del historial per indentificar al pacient: ");
+        historial = Integer.parseInt(sc.nextLine());
+        Pacient pacient;
         for (Iterator<Pacient> il = hospital.pacients.iterator(); il.hasNext();) {
-            System.out.println(il.next().toString());
+            pacient = il.next();
+            if (pacient.historial.codi == historial){
+                System.out.println(pacient.toString());
+                break;
+            }
+            
         }
     }
     
     static void mostrarMetge(Hospital hospital){
-        System.out.println("Metges: ");
+        Scanner sc = new Scanner(System.in);
+        String dni;
+        System.out.println("Introdueix el numero del DNI per indentificar al metge: ");
+        dni = sc.nextLine();
+        Metge metge;
         for (Iterator<Metge> il = hospital.metges.iterator(); il.hasNext();) {
-            System.out.println(il.next().toString());
+            metge = il.next();
+            if (metge.nif.equals(dni)){
+                System.out.println(metge.toString());
+                break;
+            }
+            
         }
     }
     
@@ -107,6 +158,7 @@ public class GestioHospital {
         Pacient Pacient = new Pacient(nom,cognom1,cognom2,numSegSocial,
             dni, tlfn,ciutat,cPostal,carrer,numero,planta,porta);
         hospital.pacients.add(Pacient);
+        hospital.historials.add(Pacient.historial);
     }
     
     
@@ -126,7 +178,7 @@ public class GestioHospital {
         for (Iterator<Pacient> it = hospital.pacients.iterator(); it.hasNext();) {
             historialSeleccionado = it.next().historial;
             if(historialSeleccionado.codi == numHistorial){
-                System.out.println(numHistorial+" trobat.");
+                System.out.println("Num Historial: "+numHistorial+" trobat.");
                 break;
             }
         }
@@ -134,7 +186,7 @@ public class GestioHospital {
        for (Iterator<Metge> il = hospital.metges.iterator(); il.hasNext();) {
            medicoSeleccionado = il.next().nif;
             if(medicoSeleccionado.equals(DniMetge)){
-                System.out.println(DniMetge+" trobat.");
+                System.out.println("DNI Metge: "+DniMetge+" trobat.");
                 break;
             }
         }
@@ -142,7 +194,7 @@ public class GestioHospital {
        for (Iterator<Malaltia> il = hospital.malalties.iterator(); il.hasNext();) {
            malaltiaSeleccionada = il.next();
             if( malaltiaSeleccionada.codi == enfermetat){
-                System.out.println("1"+" encontrado.");
+                System.out.println("Malaltia: "+malaltiaSeleccionada+" trobada.");
                  break;
             }
         }

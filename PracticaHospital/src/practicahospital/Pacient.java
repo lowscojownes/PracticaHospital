@@ -9,6 +9,7 @@ public class Pacient extends Persona{
         super(nom, cognom1, cognom2, numSegSocial, nif, telefon,ciutat,codiPostal,
                 carrer,numero,planta,porta);
         historial = new Historial(nif);
+        
     }
     
     public String toString(){
