@@ -17,7 +17,7 @@ public class Metge extends Persona {
     }
     
     public String toString(){
-        return "Metge: nom: "+nom+" cognom1: "+cognom1+" cognom2: "+cognom2+
+        return "nom: "+nom+" cognom1: "+cognom1+" cognom2: "+cognom2+
                 " Num. Seguretat social: "+numSegSocial+" DNI: "+nif+" Telefon: "
                 +telefon+" Num. Empleat: "+numEmpleat+" Salari Mensual: "
                 +salariMensual+" Codi Compte Corrent: "+codiCompteCorrent;
