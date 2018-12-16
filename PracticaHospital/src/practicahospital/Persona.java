@@ -54,7 +54,7 @@ public abstract class Persona {
         }
      
         if(falles.length()>1){
-            throw new Exception(falles); 
+            throw new ExceptionFalles(falles); 
         }
        
     }
@@ -86,5 +86,9 @@ public abstract class Persona {
         Matcher textAnalitzar = regles.matcher(telefon);
         return textAnalitzar.matches() == true;
     }
-    
+    public class ExceptionFalles extends Exception{
+    public ExceptionFalles(String msg){
+        super(msg);
+    }
+}
 }
