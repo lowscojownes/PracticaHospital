@@ -19,7 +19,7 @@ public class Historial {
     }
     
     public String toString(){
-        return "Historial: Codi: "+codi+"DNI Pacient: "+pacient+" Visites: "+visites;
+        return "Historial: Codi: "+codi+"DNI Pacient: "+pacient;
     }
     
    

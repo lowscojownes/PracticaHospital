@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 
 public abstract class Persona {
-    public static final String TABLA_LETRA ="TRWAGMYFPDXBNJZSQVHLCKE";
+    public static final String TAULA_LLETRA ="TRWAGMYFPDXBNJZSQVHLCKE";
     String nom;
     String cognom1;
     String cognom2;
@@ -72,11 +72,10 @@ public abstract class Persona {
     }
     
     public static String lletraDNI(int dni){
-        return String.valueOf(dni)+TABLA_LETRA.charAt(dni%23);
+        return String.valueOf(dni)+TAULA_LLETRA.charAt(dni%23);
     }
     
     public boolean verificarNif(int nif) throws Exception{
-        boolean correcto = false;
         Pattern regles = Pattern.compile("[0-9]{8}[A-Z]");
         Matcher textAnalitzar = regles.matcher(lletraDNI(nif));
         return textAnalitzar.matches() == true;
