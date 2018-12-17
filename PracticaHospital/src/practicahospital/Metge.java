@@ -20,7 +20,17 @@ public class Metge extends Persona {
         return "nom: "+nom+" cognom1: "+cognom1+" cognom2: "+cognom2+
                 " Num. Seguretat social: "+numSegSocial+" DNI: "+nif+" Telefon: "
                 +telefon+" Num. Empleat: "+numEmpleat+" Salari Mensual: "
-                +salariMensual+" Codi Compte Corrent: "+codiCompteCorrent;
+                +salariMensual+" Codi Compte Corrent: "+codiCompteCorrent+".\n"+
+                "Direccio: Ciutat: "+direccio.ciutat+" Codi Postal: "
+                +direccio.codiPostal+" Carrer: "+direccio.carrer+" Numero: "
+                +direccio.numero+" Planta: "+direccio.planta+" Porta: "+direccio.porta;
     }
+    
+    /*public String toString(){
+        return "nom: "+nom+" cognom1: "+cognom1+" cognom2: "+cognom2+
+                " Num. Seguretat social: "+numSegSocial+" DNI: "+nif+" Telefon: "
+                +telefon+" Num. Empleat: "+numEmpleat+" Salari Mensual: "
+                +salariMensual+" Codi Compte Corrent: "+codiCompteCorrent;
+    }*/
     
 }
