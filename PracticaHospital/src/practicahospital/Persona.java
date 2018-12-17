@@ -13,7 +13,7 @@ public abstract class Persona {
     String nif;
     String telefon;
     String falles=" ";
-    private Adreca direccio;
+    Adreca direccio;
     
     public Persona(String nom,String cognom1,String cognom2,String numSegSocial,
             String nif, String telefon, String ciutat,String codiPostal,String carrer,

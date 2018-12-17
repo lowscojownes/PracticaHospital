@@ -15,7 +15,7 @@ public class Pacient extends Persona{
     public String toString(){
         return "nom: "+nom+" cognom1: "+cognom1+" cognom2: "+cognom2+
                 " Num. Seguretat social: "+numSegSocial+" DNI: "+nif+" Telefon: "
-                +telefon;
+                +telefon+direccio;
     }
     
 }
