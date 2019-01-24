@@ -1,9 +1,9 @@
 package m03.uf5.p01.grup04.gestioHospital;
 
 public class Metge extends Persona {
-    int numEmpleat;
-    int salariMensual;
-    String codiCompteCorrent;
+    private int numEmpleat;
+    private int salariMensual;
+    private String codiCompteCorrent;
     
     public Metge(String nom, String cognom1, String cognom2, String numSegSocial,
             String nif, String telefon, int numEmpleat,int salariMensual,
@@ -17,12 +17,12 @@ public class Metge extends Persona {
     }
     
     public String toString(){
-        return "nom: "+nom+" cognom1: "+cognom1+" cognom2: "+cognom2+
-                " Num. Seguretat social: "+numSegSocial+" DNI: "+nif+" Telefon: "
-                +telefon+" Num. Empleat: "+numEmpleat+" Salari Mensual: "
+        return "nom: "+Metge.super.getNom()+" cognom1: "+Metge.super.getCognom1()+" cognom2: "+Metge.super.getCognom2()+
+                " Num. Seguretat social: "+Metge.super.getNumSegSocial()+" DNI: "+Metge.super.getNif()+" Telefon: "
+                +Metge.super.getTelefon()+" Num. Empleat: "+numEmpleat+" Salari Mensual: "
                 +salariMensual+" Codi Compte Corrent: "+codiCompteCorrent+".\n"+
-                "Direccio: Ciutat: "+direccio.ciutat+" Codi Postal: "
-                +direccio.codiPostal+" Carrer: "+direccio.carrer+" Numero: "
-                +direccio.numero+" Planta: "+direccio.planta+" Porta: "+direccio.porta;
+                "Direccio: Ciutat: "+Metge.super.getDireccio().getCiutat()+" Codi Postal: "
+                +Metge.super.getDireccio().getCodiPostal()+" Carrer: "+Metge.super.getDireccio().getCarrer()+" Numero: "
+                +Metge.super.getDireccio().getNumero()+" Planta: "+Metge.super.getDireccio().getPlanta()+" Porta: "+Metge.super.getDireccio().getPorta();
     }
 }

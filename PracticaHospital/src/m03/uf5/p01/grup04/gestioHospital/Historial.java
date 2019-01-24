@@ -5,22 +5,46 @@ import java.util.Set;
 
 
 public class Historial {
-    static int idHistorial = 1;
-    int codi;
-    String pacient;
-    Set<Visita> visites;
+    
+    private static int idHistorial = 1;
+    private int codi;
+    private String pacient;
+    private Set<Visita> visites;
     
     public Historial(String nif){
-        codi = idHistorial;
-        idHistorial ++;
+        codi = idHistorial++;
         pacient = nif;
         visites = new HashSet<Visita>();
      
     }
     
     public String toString(){
-        return "Codi: "+codi+" DNI Pacient: "+pacient;
+        return "Codi: "+getCodi()+" DNI Pacient: "+getPacient();
     }
+
+    
+    public static int getIdHistorial() {
+        return idHistorial;
+    }
+
+    
+    public int getCodi() {
+        return codi;
+    }
+
+    
+    public String getPacient() {
+        return pacient;
+    }
+
+    
+    public Set<Visita> getVisites() {
+        return visites;
+    }
+    
+    
+    
+    
     
    
 }

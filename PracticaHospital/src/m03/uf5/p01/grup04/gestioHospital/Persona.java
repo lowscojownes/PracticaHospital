@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 
 public abstract class Persona {
     public static final String TAULA_LLETRA ="TRWAGMYFPDXBNJZSQVHLCKE";
-    String nom;
-    String cognom1;
-    String cognom2;
-    String numSegSocial;
-    String nif;
-    String telefon;
-    String falles=" ";
-    Adreca direccio;
+    private String nom;
+    private String cognom1;
+    private String cognom2;
+    private String numSegSocial;
+    private String nif;
+    private String telefon;
+    private String falles=" ";
+    private Adreca direccio;
     
     public Persona(String nom,String cognom1,String cognom2,String numSegSocial,
             String nif, String telefon, String ciutat,String codiPostal,String carrer,
@@ -85,6 +85,41 @@ public abstract class Persona {
         Pattern regles = Pattern.compile("\\+34[\\s][9][0-9]{8}");
         Matcher textAnalitzar = regles.matcher(telefon);
         return textAnalitzar.matches() == true;
+    }
+
+    
+    public String getNom() {
+        return nom;
+    }
+
+    
+    public String getCognom1() {
+        return cognom1;
+    }
+
+    
+    public String getCognom2() {
+        return cognom2;
+    }
+
+    
+    public String getNumSegSocial() {
+        return numSegSocial;
+    }
+
+    
+    public String getNif() {
+        return nif;
+    }
+
+    
+    public String getTelefon() {
+        return telefon;
+    }
+
+   
+    public Adreca getDireccio() {
+        return direccio;
     }
     public class ExceptionFalles extends Exception{
     public ExceptionFalles(String msg){

@@ -4,12 +4,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Hospital {
-    String nom;
-    Adreca adreca;
-    Set<Historial>  historials;
-    Set<Malaltia>  malalties;
-    Set<Pacient> pacients;
-    Set<Metge> metges;
+    private String nom;
+    private Adreca adreca;
+    private Set<Historial>  historials;
+    private Set<Malaltia>  malalties;
+    private Set<Pacient> pacients;
+    private Set<Metge> metges;
     
 
     public Hospital(String nom,String ciutat,String codiPostal,String carrer,
@@ -21,6 +21,31 @@ public class Hospital {
         malalties = new HashSet<Malaltia>();
         metges = new HashSet<Metge>();
         
+    }
+
+    
+    public String getNom() {
+        return nom;
+    }
+
+    public Adreca getAdreca() {
+        return adreca;
+    }
+
+    public Set<Historial> getHistorials() {
+        return historials;
+    }
+
+    public Set<Malaltia> getMalalties() {
+        return malalties;
+    }
+
+    public Set<Pacient> getPacients() {
+        return pacients;
+    }
+
+    public Set<Metge> getMetges() {
+        return metges;
     }
 
    

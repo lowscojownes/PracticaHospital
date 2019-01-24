@@ -4,15 +4,35 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Visita {
-    String metge;
-    Malaltia diagnostic;
-    LocalDate data ;
-    LocalTime hora ;
+    private String metge;
+    private Malaltia diagnostic;
+    private LocalDate data ;
+    private LocalTime hora ;
     
     public Visita(String metge,Malaltia malaltia){
         this.metge = metge;
         data = LocalDate.now();
         hora = LocalTime.now();
         diagnostic = malaltia;
+    }
+
+    
+    public String getMetge() {
+        return metge;
+    }
+
+    
+    public Malaltia getDiagnostic() {
+        return diagnostic;
+    }
+
+    
+    public LocalDate getData() {
+        return data;
+    }
+
+    
+    public LocalTime getHora() {
+        return hora;
     }
 }
